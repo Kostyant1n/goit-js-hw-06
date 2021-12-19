@@ -17,7 +17,7 @@ const imgGalerry = document.querySelector("ul");
 
 const itemsImages = images
   .map((img) => {
-    return `<li><img src="${img.url}" alt="${img.alt}" width = "400"></li>`;
+    return `<li><img src="${img.url}" alt="${img.alt}" width = "100%" height = "100%";</li>`;
   })
   .join("");
 imgGalerry.insertAdjacentHTML("afterbegin", itemsImages);

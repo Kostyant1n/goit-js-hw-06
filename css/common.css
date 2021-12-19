@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  list-style-type: none;
 }
 
 body {
@@ -21,4 +22,10 @@ input {
 button {
   padding: 8px 12px;
   cursor: pointer;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
