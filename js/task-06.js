@@ -1,11 +1,16 @@
 const form = document.querySelector("#validation-input");
 const artLength = form.getAttribute("data-length");
-form.onblur = function () {
-  if (artLength.includes(this.value.length)) {
-    this.classList.remove("invalid");
-    this.classList.add("valid");
+const parseLength = parseInt(artLength);
+
+const classAll = function (classAdd, classRemove) {
+  form.classList.add(classAdd);
+  form.classList.remove(classRemove);
+};
+
+form.addEventListener("blur", () => {
+  if (form.value.length === parseLength) {
+    classAll("valid", "invalid");
     return;
   }
-  this.classList.remove("valid");
-  this.classList.add("invalid");
-};
+  classAll("invalid", "valid");
+});
